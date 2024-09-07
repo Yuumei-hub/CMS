@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<Slider>
+
+<!-- Hero Start = Summary -->
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 offset-md-1 col-md-11">
+                <div class="swiper-container hero-slider">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model)
+                        {
+                            <div class="swiper-slide slide-content d-flex align-items-center">
+                                <div class="single-slide">
+                                    <h1 data-aos="fade-right" data-aos-delay="200">
+                                        @item.Title
+                                    </h1>
+                                    <div style="background-image: url(' @item.ImageUrl');
+                                     background-size: auto;
+                                     background-repeat: no-repeat;
+                                     background-position: center;
+                                     height: 500px;
+                                     width: 500%;">
+                                        <p data-aos="fade-right" data-aos-delay="600" style="background-color: rgba(76, 80, 80, 0.3); position: fixed; bottom: 0; width:100%; text-align: center">
+                                            @item.Description
+                                        </p>
+                                    </div>
+
+                                    <br>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Control -->
+        <span class="arr-left" style="background-color: rgba(253,230,255,255); border-radius: 50%; display: inline-block; padding: 5px;"><i class="fa fa-angle-left"></i></span>
+        <span class="arr-right"><i class="fa fa-angle-right"></i></span>
+    </div>
+    <div class="texture"></div>
+    <div class="diag-bg"></div>
+</section>
+<!-- Hero End -->

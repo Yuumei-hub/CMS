@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Testimonial
+
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateTestimonial", "Testimonial", FormMethod.Post))
+{
+    <form class="form-group">
+        <br>
+        @Html.HiddenFor(x=>x.TestimonialId)
+        @Html.Label("Testimonial Name")
+        @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+        <br />
+        <label>Comment</label>
+        @Html.TextBoxFor(x=>x.Comment, new {@class="form-control"})
+        <br>
+        <label>ImageUrl</label>
+        @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+        <br>
+        <label>Date</label>
+        @Html.TextBoxFor(x=>x.Date, new {@class="form-control"})
+        <br>
+        <button class="btn btn-success">Save</button>
+    </form>
+}
+
+

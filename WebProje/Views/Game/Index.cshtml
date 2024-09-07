@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Game>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Games</h4>
+            <h4 class="card-title">Games</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.GameId</td>
+                                <td>@item.Title</td>
+                                <td>@item.Description</td>
+                                <td><a href="/Game/DeleteGame/@item.GameId" class="btn btn-outline-danger">Delete</a></td>
+                                <td><a href="/Game/UpdateGame/@item.GameId" class="btn btn-outline-success">Update</a></td>
+                                <td></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/Game/CreateGame/" class="btn btn-outline-info"> Create New Game</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

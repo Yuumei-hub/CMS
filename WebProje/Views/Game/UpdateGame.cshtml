@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Game
+@{
+    ViewData["Title"] = "UpdateGame";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateGame", "Game", FormMethod.Post))
+{
+    <form class="form-group">
+        <br>
+        @Html.HiddenFor(x=>x.GameId)
+        @Html.Label("Game Title")
+        @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
+        <br />
+        <label>Description</label>
+        @Html.TextBoxFor(x=>x.Description, new {@class="form-control"})
+
+        <br>
+        <label>ImageUrl</label>
+        @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+
+        <br>
+        <button class="btn btn-success">Save</button>
+    </form>
+}
+
+

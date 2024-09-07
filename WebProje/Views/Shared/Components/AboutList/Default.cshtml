@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+ 
+<!-- Featured = About Us Start -->
+<section class="featured">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
+
+                    <div class="title">
+                        <h6 class="title-primary">About Us</h6>
+                        <h1 class="title-blue">@item.Title</h1>
+                    </div>
+                    <p>
+                        @item.Description
+                    </p>
+
+
+                    <div class="media-element d-flex justify-content-between">
+                        <div class="media">
+                            <i class="fa fa-magic mr-4"></i>
+                            <div class="media-body">
+                                <h5>any offer</h5>
+                                New York, United States
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+                    <div class="featured-img">
+                        <img class="featured-big" src="@item.ImageUrl" alt="Featured 1">
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>
+<!-- Featured End -->

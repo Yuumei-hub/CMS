@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Testimonial
+
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("CreateTestimonial", "Testimonial", FormMethod.Post))
+{
+    <h1>Create Testimonial</h1>
+    <form class="form-group">
+        <br>
+        @Html.Label("Testimonial Name")
+        <input type="text" name="Name" class="form-control" />
+        <br />
+        <label>Comment</label>
+        <input type="text" name="Comment" class="form-control">
+        <br>
+        <label>ImageUrl</label>
+        <input type="text" name="ImageUrl" class="form-control">
+        <br>
+        <label>Date</label>
+        <input type="text" name="Date" class="form-control">
+        <br>
+        <button class="btn btn-primary">Save</button>
+    </form>
+
+}
+
+

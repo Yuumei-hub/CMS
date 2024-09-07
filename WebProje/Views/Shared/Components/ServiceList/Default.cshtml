@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<Service>
+
+    <!-- Services = Why Choose Us? Start -->
+<section class="services">
+    <div class="container">
+        <div class="title text-center">
+            <h6>Our Speakers</h6>
+            <h1 class="title-blue">Why Choose Us</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+                            <img class="mr-4" src="@item.ImageUrl" alt="Web Development">
+                            <div class="media-body">
+                                <h5>@item.Title</h5>
+                                @item.Description
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services End -->

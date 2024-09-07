@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewData["Title"] = "UpdateUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+{
+    <form class="form-group">
+        <br>
+        @Html.HiddenFor(x=>x.UserId)
+        @Html.Label("Users Username")
+        @Html.TextBoxFor(x=>x.Username, new {@class="form-control"})
+        <br />
+        <label>Email</label>
+        @Html.TextBoxFor(x=>x.Email, new {@class="form-control"})
+
+        <br>
+        <label>Password</label>
+        @Html.TextBoxFor(x=>x.Password, new {@class="form-control"})
+
+        <br>
+        <button class="btn btn-success">Save</button>
+    </form>
+}
+
+
